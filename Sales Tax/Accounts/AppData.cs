@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AccountsLibrary
-{
+{ 
     public class Products
     {
         public int ItemCount { get; set; }
@@ -17,6 +17,7 @@ namespace AccountsLibrary
         public double SalesPrice { get; set; }
         public double ShelfPrice { get; set; }
     }
+
 
     public class AppData
     {

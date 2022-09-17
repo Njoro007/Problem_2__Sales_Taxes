@@ -11,7 +11,7 @@ namespace AccountsLibrary
         public static double ApplyImportDutyOnSalesTax(int ItemCount, double SaleAmount,string ItemName)
         {
             double SaleAmountWithAppliedTax = 0.00;
-
+             
             if (ItemName.Contains("imported"))
             {
                 SaleAmountWithAppliedTax = AppData._AppDataValues.ImportDutyTaxPercentage * (SaleAmount*ItemCount) / 100;

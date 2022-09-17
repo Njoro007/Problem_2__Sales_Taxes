@@ -54,7 +54,7 @@ Basket.Add(new Products { ItemCount = 1, ProductName = "Packet of Headache Pills
 Basket.Add(new Products { ItemCount = 1, ProductName = "imported Chocolates", ProductType = "food", SalesPrice = 11.25 });
 DisplayReceipt();
 
-
+ 
 Console.ReadLine();
 
 

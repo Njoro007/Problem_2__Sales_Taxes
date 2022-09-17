@@ -1,4 +1,5 @@
-# Problem 2: Sales Taxes
+# Problem 2: Sales Taxes - Printing receipt details for shopping baskets
+<hr/>
 
 <h2> Environment </h2>
 
@@ -19,20 +20,31 @@
 	Subroutines identified or implemented in this assessment are categorized and organized by topic into classes.
 </p>
 <p>
-For this Problem Assessment 2 (Sales Tax), classes are:
-1.	RoundFigures – This class contains methods that return different values of rounded figures and arguments that fill equations of a formula for the method to complete its task.
-2.	Tax – This class contains methods, each with different tax formulas
-3.	AppData – This class contains properties of different types of data and their data types required to complete the sales tax application
+For this Problem Assessment 2 (Sales Tax), classes are: </br>
+1.	RoundFigures – This class contains methods that return different values of rounded figures and arguments that fill equations of a formula for the method to complete its task.</br>
+2.	Tax – This class contains methods, each with different tax formulas.</br>
+3.	AppData – This class contains properties of different types of data and their data types required to complete the sales tax application.</br>
+</p>
 
+</hr>
+
+<h2> Design Patterns </h2>
+
+<p>
+	The different types of programming syntax and design patterns used in the sales tax application are: </br>
+	1.	The use of Lists and LINQ to handle CRUD operations </br>
+	2.	The use of Custom Library </br>
 </p>
 
 
-<h2>I'm Njoro007 <img src="https://media.giphy.com/media/12oufCB0MyZ1Go/giphy.gif" width="60"> </h2>
+</hr>
+
+<h2> Class Library </h2>
+
 
 <p>
-<em>Software, Web Developer and Customer Success at <a href="https://www.computeresources.co.ke">Computer Resources</a>
-</br>
-Freelancer Developer 
-<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="60"> 
-</em>
+The use of a Custom Library would be recommended for such an application where it can scale up the number of 
+subroutines that handle tax rules and can change overtime. Class Library is being added as a dependency to 
+the main console application project. Which will make it possible for multiple programmers to work on
+the library, source control and code readability. 
 </p>
