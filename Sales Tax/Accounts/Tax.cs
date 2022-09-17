@@ -8,25 +8,25 @@ namespace AccountsLibrary
 {
     public static class Tax
     {
-        public static double ApplyImportDutyOnSalesTax(double SaleAmount,string ItemName)
+        public static double ApplyImportDutyOnSalesTax(int ItemCount, double SaleAmount,string ItemName)
         {
             double SaleAmountWithAppliedTax = 0.00;
 
             if (ItemName.Contains("imported"))
             {
-                SaleAmountWithAppliedTax = AppData._AppDataValues.ImportDutyTaxPercentage * SaleAmount / 100;
-                SaleAmountWithAppliedTax = RoundFigures.RoundOffToHundredths(SaleAmountWithAppliedTax);
+                SaleAmountWithAppliedTax = AppData._AppDataValues.ImportDutyTaxPercentage * (SaleAmount*ItemCount) / 100;
+                SaleAmountWithAppliedTax = RoundFigures.RoundOffToFifthHundredths(SaleAmountWithAppliedTax);
             }
             else
             {
-                SaleAmountWithAppliedTax = RoundFigures.RoundOffToHundredths(SaleAmountWithAppliedTax);
+                SaleAmountWithAppliedTax = RoundFigures.RoundOffToFifthHundredths(SaleAmountWithAppliedTax);
             }
 
             return SaleAmountWithAppliedTax;
         }
 
 
-        public static double ApplyBasicSalesTax(double SaleAmount, string ProductType)
+        public static double ApplyBasicSalesTax(int ItemCount,double SaleAmount, string ProductType)
         {
             double SaleAmountWithAppliedTax = 0.00;
 
@@ -34,12 +34,12 @@ namespace AccountsLibrary
             || ProductType.Equals("books", StringComparison.OrdinalIgnoreCase)
             || ProductType.Equals("medical product", StringComparison.OrdinalIgnoreCase))
             {
-                SaleAmountWithAppliedTax = RoundFigures.RoundOffToHundredths(SaleAmountWithAppliedTax);
+                SaleAmountWithAppliedTax = RoundFigures.RoundOffToFifthHundredths(SaleAmountWithAppliedTax);
             }
             else
             {
-                SaleAmountWithAppliedTax = AppData._AppDataValues.BasicSalesTaxPercentage * SaleAmount / 100;
-                SaleAmountWithAppliedTax = RoundFigures.RoundOffToHundredths(SaleAmountWithAppliedTax);
+                SaleAmountWithAppliedTax = AppData._AppDataValues.BasicSalesTaxPercentage * (SaleAmount*ItemCount) / 100;
+                SaleAmountWithAppliedTax = RoundFigures.RoundOffToFifthHundredths(SaleAmountWithAppliedTax);
             }
             return SaleAmountWithAppliedTax;
         }

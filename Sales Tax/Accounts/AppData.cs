@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace AccountsLibrary
 {
+    public class Products
+    {
+        public int ItemCount { get; set; }
+        public string ProductName { get; set; }
+        public string ProductType { get; set; }
+        public double ImportDutyTax { get; set; }
+        public double BasicTax { get; set; }
+        public double TotalTax { get; set; }
+        public double SalesPrice { get; set; }
+        public double ShelfPrice { get; set; }
+    }
+
     public class AppData
     {
         public double BasicSalesTaxPercentage { get; set; }

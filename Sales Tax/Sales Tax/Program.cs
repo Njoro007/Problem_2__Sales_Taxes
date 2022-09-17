@@ -1,58 +1,74 @@
-﻿
-
-// See https://aka.ms/new-console-template for more information
+﻿// See https://aka.ms/new-console-template for more information
 using AccountsLibrary;
-using System.Runtime.CompilerServices;
 
 Console.WriteLine("PROBLEM 2: SALES TAX Assessment");
+Console.WriteLine("");
 
 //Set Tax Values
 AppData._AppDataValues.ImportDutyTaxPercentage = 5;
 AppData._AppDataValues.BasicSalesTaxPercentage = 10;
 
-List<Products> _Basket1 = new List<Products>();
-List<Products> _Basket2 = new List<Products>();
-List<Products> _Basket3 = new List<Products>();
-
-List<Products> _Basket1Receipt = new List<Products>();
-List<Products> _Basket2Receipt = new List<Products>();
-List<Products> _Basket3Receipt = new List<Products>();
+List<Products> Basket = new List<Products>();
+List<Products> BasketReceipt = new List<Products>();
 
 
-// Clear Basket 1 First
-_Basket1.Clear();
-// Add Items to Basket 1
-_Basket1.Add(new Products { ProductName = "book", ProductType = "books", SalesPrice = 12.49 });
-_Basket1.Add(new Products { ProductName = "music CD", ProductType = "music", SalesPrice = 14.99 });
-_Basket1.Add(new Products { ProductName = "chocolate bar", ProductType = "food", SalesPrice = 0.85 });
-
+// Clear Basket First
+Basket.Clear();
+// Clear Receipt First
+BasketReceipt.Clear();
+// Add Items to Basket 
+Basket.Add(new Products { ItemCount = 1, ProductName = "book", ProductType = "books", SalesPrice = 12.49 });
+Basket.Add(new Products { ItemCount = 1, ProductName = "music CD", ProductType = "music", SalesPrice = 14.99 });
+Basket.Add(new Products { ItemCount = 1, ProductName = "chocolate bar", ProductType = "food", SalesPrice = 0.85 });
 DisplayReceipt();
 
 
-// Clear Basket 1 First
-_Basket1.Clear();
-// Add Items to Basket 1
-_Basket1.Add(new Products { ProductName = "book", ProductType = "books", SalesPrice = 12.49 });
-_Basket1.Add(new Products { ProductName = "music CD", ProductType = "music", SalesPrice = 14.99 });
-_Basket1.Add(new Products { ProductName = "chocolate bar", ProductType = "food", SalesPrice = 0.85 });
 
+Console.WriteLine("");
+
+
+
+// Clear Basket First
+Basket.Clear();
+// Clear Receipt First
+BasketReceipt.Clear();
+// Add Items to Basket 
+Basket.Add(new Products { ItemCount = 1, ProductName = "imported box of Chocolate", ProductType = "food", SalesPrice = 10.00 });
+Basket.Add(new Products { ItemCount = 1, ProductName = "imported bottle of perfume", ProductType = "perfume", SalesPrice = 47.50 });
 DisplayReceipt();
 
 
+
+Console.WriteLine("");
+
+
+
+// Clear Basket First
+Basket.Clear();
+// Clear Receipt First
+BasketReceipt.Clear();
+// Add Items to Basket 
+Basket.Add(new Products { ItemCount = 1, ProductName = "imported bottle of perfume", ProductType = "perfume", SalesPrice = 27.99 });
+Basket.Add(new Products { ItemCount = 1, ProductName = "bottle of perfume", ProductType = "perfume", SalesPrice = 18.99 });
+Basket.Add(new Products { ItemCount = 1, ProductName = "Packet of Headache Pills", ProductType = "medical product", SalesPrice = 9.75 });
+Basket.Add(new Products { ItemCount = 1, ProductName = "imported Chocolates", ProductType = "food", SalesPrice = 11.25 });
+DisplayReceipt();
+
+
+Console.ReadLine();
 
 
 void DisplayReceipt()
 {
-
-    foreach (var basketItem in _Basket1)
+    foreach (var basketItem in Basket)
     {
-        //Calculate tax for Each Item in Basket 1
-        double ItemBasicTax = AccountsLibrary.Tax.ApplyBasicSalesTax(basketItem.SalesPrice, basketItem.ProductType);
-        double ItemImportDutyTax = AccountsLibrary.Tax.ApplyImportDutyOnSalesTax(basketItem.SalesPrice, basketItem.ProductName);
-        double TotalTaxForItem = ItemBasicTax + ItemImportDutyTax;
+        //Calculate tax for Each Item in Basket 
+        double ItemBasicTax = AccountsLibrary.Tax.ApplyBasicSalesTax(basketItem.ItemCount, basketItem.SalesPrice, basketItem.ProductType);
+        double ItemImportDutyTax = AccountsLibrary.Tax.ApplyImportDutyOnSalesTax(basketItem.ItemCount, basketItem.SalesPrice, basketItem.ProductName);
+        double TotalTaxForItem = AccountsLibrary.RoundFigures.RoundOffToFifthHundredths(ItemBasicTax + ItemImportDutyTax);
 
         // Build Receipt for Basket 1
-        _Basket1Receipt.Add(new Products
+        BasketReceipt.Add(new Products
         {
             ProductName = basketItem.ProductName,
             ProductType = basketItem.ProductType,
@@ -60,31 +76,22 @@ void DisplayReceipt()
             BasicTax = ItemBasicTax,
             TotalTax = TotalTaxForItem,
             SalesPrice = basketItem.SalesPrice,
-            ShelfPrice = AccountsLibrary.RoundFigures.RoundOffToHundredths(basketItem.SalesPrice + TotalTaxForItem)
+            ShelfPrice = AccountsLibrary.RoundFigures.RoundOffToHundredths( basketItem.SalesPrice + TotalTaxForItem)
         });
     }
 
-    foreach (var receiptItem in _Basket1Receipt)
+    var SumBasketShelfPrice = BasketReceipt.Sum(item => item.ShelfPrice);
+    var SumSalesTax = BasketReceipt.Sum(item => item.TotalTax);
+
+    foreach (var receiptItem in BasketReceipt)
     {
         Console.WriteLine($"{receiptItem.ProductName}: {receiptItem.ShelfPrice}");
     }
-    double SumBasketShelfPrice = _Basket1Receipt.Sum(item => item.ShelfPrice);
-    double SumSalesTax = _Basket1Receipt.Sum(item => item.TotalTax);
-
     Console.WriteLine($"Sales Taxes: {SumSalesTax}");
     Console.WriteLine($"Total: {SumBasketShelfPrice}");
 }
 
 
 
-public class Products
-{
-    public string ProductName { get; set; }
-    public string ProductType { get; set; }
-    public double ImportDutyTax { get; set; }
-    public double BasicTax { get; set; }
-    public double TotalTax { get; set; }
-    public double SalesPrice { get; set; }
-    public double ShelfPrice { get; set; }
-}
+
 

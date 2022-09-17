@@ -8,11 +8,19 @@ namespace AccountsLibrary
 {
     public static class RoundFigures
     {
-        public static double RoundOffToHundredths(double roundedFigure)
+        public static double RoundOffToFifthHundredths(double roundFigure)
         {
-            roundedFigure = Math.Round(roundedFigure, 2, MidpointRounding.AwayFromZero);
+            //roundFigure = Math.Round(roundFigure, 2, MidpointRounding.AwayFromZero);
+            //roundFigure = Math.Round(roundFigure * 20,  MidpointRounding.AwayFromZero)/20;
+            //roundFigure = Math.Ceiling(roundFigure / 0.05) * 0.05;
+            roundFigure = Math.Round(roundFigure / 0.05) * 0.05;
+            return roundFigure;
+        }
 
-            return roundedFigure;
+        public static double RoundOffToHundredths(double roundFigure)
+        {
+            roundFigure = Math.Round(roundFigure, 2, MidpointRounding.AwayFromZero);
+            return roundFigure;
         }
     }
 }
