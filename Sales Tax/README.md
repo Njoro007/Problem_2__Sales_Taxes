@@ -1,5 +1,5 @@
 
-# Problem 2: Sales Taxes - How to Run/Start Project on Visual Studio Community 2022
+# How to Run/Start Project on Visual Studio Community 2022
 <hr/>
 
 <h2> Prerequisite </h2>
