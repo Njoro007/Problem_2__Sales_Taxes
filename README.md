@@ -60,3 +60,18 @@ the library, code reuse, source control and code readability.
 	Project Name: <i>AccountsLibraryTests</i> <br/>
 	Testing Tool: <i>MSTest</i>
 </p>
+
+</hr>
+
+<h2> Run </h2>
+
+<h3> On Windows Platform </h3>
+<p>
+	Run Exe: Inside <i>App Run</i> Folder run the exe file
+	Visual Studio: Run  Application from Visual Studio 2022
+</p>
+<br/>
+<h3> On MAC </h3>
+<p>
+	Visual Studio: Run  Application from Visual Studio 2022
+</p>
