@@ -4,7 +4,7 @@
 <h2> Environment </h2>
 
 <p>
-	This Assessment Test was implemented using Visual Studio 2022 Community IDE and C# Language
+	This Assessment Test was implemented using Visual Studio 2022 Community IDE, .NET 6 and C# Language
 </p>
 
 
@@ -34,6 +34,7 @@ For this Problem Assessment 2 (Sales Tax), classes are: </br>
 	The different types of programming syntax and design patterns used in the sales tax application are: </br>
 	1.	The use of Lists and LINQ to handle CRUD operations </br>
 	2.	The use of Custom Library </br>
+	3.  Unit Tests 
 </p>
 
 
@@ -46,5 +47,15 @@ For this Problem Assessment 2 (Sales Tax), classes are: </br>
 The use of a Custom Library would be recommended for such an application where it can scale up the number of 
 subroutines that handle tax rules and can change overtime. Class Library is being added as a dependency to 
 the main console application project. Which will make it possible for multiple programmers to work on
-the library, source control and code readability. 
+the library, code reuse, source control and code readability. 
+</p>
+
+</hr>
+
+<h2> Unit Test </h2>
+
+
+<p>
+	Project Name: <i>AccountsLibraryTests</i> <br/>
+	Testing Tool: <i>MSTest</i>
 </p>
