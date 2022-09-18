@@ -67,7 +67,7 @@ the library, code reuse, source control and code readability.
 
 <p>
 <h3> On Windows Platform </h3>
-	Run Exe: Inside <i>App Run</i> Folder run the exe file
+	Run Exe: Inside <i>App Run</i> Folder run the exe file <br/>
 	Visual Studio: Run  Application from Visual Studio 2022
 </p>
 <p>
