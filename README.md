@@ -65,13 +65,12 @@ the library, code reuse, source control and code readability.
 
 <h2> Run </h2>
 
-<h3> On Windows Platform </h3>
 <p>
+<h3> On Windows Platform </h3>
 	Run Exe: Inside <i>App Run</i> Folder run the exe file
 	Visual Studio: Run  Application from Visual Studio 2022
 </p>
-<br/>
-<h3> On MAC </h3>
 <p>
+<h3> On MAC </h3>
 	Visual Studio: Run  Application from Visual Studio 2022
 </p>
