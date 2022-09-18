@@ -12,6 +12,8 @@ List<Products> Basket = new List<Products>();
 List<Products> BasketReceipt = new List<Products>();
 
 
+ 
+//Basket 1
 // Clear Basket First
 Basket.Clear();
 // Clear Receipt First
@@ -28,6 +30,7 @@ Console.WriteLine("");
 
 
 
+//Bascket 2
 // Clear Basket First
 Basket.Clear();
 // Clear Receipt First
@@ -43,6 +46,7 @@ Console.WriteLine("");
 
 
 
+//Basket 3
 // Clear Basket First
 Basket.Clear();
 // Clear Receipt First
@@ -58,6 +62,7 @@ DisplayReceipt();
 Console.ReadLine();
 
 
+//Method is used to display Receipt Content of Items in Baskets
 void DisplayReceipt()
 {
     foreach (var basketItem in Basket)
@@ -65,9 +70,11 @@ void DisplayReceipt()
         //Calculate tax for Each Item in Basket 
         double ItemBasicTax = AccountsLibrary.Tax.ApplyBasicSalesTax(basketItem.ItemCount, basketItem.SalesPrice, basketItem.ProductType);
         double ItemImportDutyTax = AccountsLibrary.Tax.ApplyImportDutyOnSalesTax(basketItem.ItemCount, basketItem.SalesPrice, basketItem.ProductName);
+        
+        //Calculating total tax for a specific item in the basket. i.e include import duty and Basic sales tax for specific item in basket
         double TotalTaxForItem = AccountsLibrary.RoundFigures.RoundOffToFifthHundredths(ItemBasicTax + ItemImportDutyTax);
 
-        // Build Receipt for Basket 1
+        // Build Receipt for Basket List
         BasketReceipt.Add(new Products
         {
             ProductName = basketItem.ProductName,
@@ -80,9 +87,13 @@ void DisplayReceipt()
         });
     }
 
+    //Calculate Total amount to be paid for all items in basket achieved by getting Shelf Price for each item and summing 
     var SumBasketShelfPrice = BasketReceipt.Sum(item => item.ShelfPrice);
+
+    //Summing Total ta for all items in the basket. using LINQ
     var SumSalesTax = BasketReceipt.Sum(item => item.TotalTax);
 
+    //Print Receipt
     foreach (var receiptItem in BasketReceipt)
     {
         Console.WriteLine($"{receiptItem.ProductName}: {receiptItem.ShelfPrice}");

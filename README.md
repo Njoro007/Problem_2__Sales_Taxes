@@ -40,10 +40,11 @@ For this Problem Assessment 2 (Sales Tax), classes are: </br>
 
 </hr>
 
+
 <h2> Class Library </h2>
-
-
 <p>
+Project Name: <i>AccountsLibrary</i> <br/>
+<br/>
 The use of a Custom Library would be recommended for such an application where it can scale up the number of 
 subroutines that handle tax rules and can change overtime. Class Library is being added as a dependency to 
 the main console application project. Which will make it possible for multiple programmers to work on

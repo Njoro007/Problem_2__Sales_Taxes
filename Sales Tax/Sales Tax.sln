@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales Tax", "Sales Tax\Sale
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountsLibrary", "Accounts\AccountsLibrary.csproj", "{E865A2AC-EE0C-4F4C-A663-560AE936728E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsLibraryTests", "AccountsLibraryTests\AccountsLibraryTests.csproj", "{F2F692DC-42D1-4B62-8C7F-76DB8E5EA32E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E865A2AC-EE0C-4F4C-A663-560AE936728E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E865A2AC-EE0C-4F4C-A663-560AE936728E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E865A2AC-EE0C-4F4C-A663-560AE936728E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2F692DC-42D1-4B62-8C7F-76DB8E5EA32E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F692DC-42D1-4B62-8C7F-76DB8E5EA32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F692DC-42D1-4B62-8C7F-76DB8E5EA32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F692DC-42D1-4B62-8C7F-76DB8E5EA32E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
